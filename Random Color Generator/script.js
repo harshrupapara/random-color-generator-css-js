@@ -8,9 +8,9 @@ const setBg = () => {
   generateNew.style.backgroundColor = "#" + colorCode;
   generateNew.style.filter = "#" + colorCode;
   color.innerHTML = "#" + colorCode;
+  color.addEventListener("click", copyCode);
+  document.getElementById("tooltip").innerHTML = "Copy to Clipboard 😎!";
 };
-
-generateNew.addEventListener("click", setBg);
 
 function copyCode() {
   let hexCode = color.innerHTML;
@@ -23,5 +23,4 @@ function copyCode() {
   document.body.removeChild(input);
   document.getElementById("tooltip").innerHTML = "Copied!";
 }
-
-color.addEventListener("click", copyCode);
+generateNew.addEventListener("click", setBg);
